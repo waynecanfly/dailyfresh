@@ -162,3 +162,25 @@ class LoginView(View):
         else:
             return render(request, 'login.html', {'errmsg': '用户名或密码错误'})
 
+# /user
+class UserInfoView(View):
+    """用户中心-信息页"""
+    def get(self,request):
+        return render(request, 'user_center_info.html')
+
+
+# /user/order
+class UserOrderView(View):
+    """用户中心-订单页"""
+    def get(self,request):
+        return render(request, 'user_center_order.html')
+
+
+# /user/address
+class AddressView(View):
+    """用户中心-信息页"""
+    def get(self,request):
+        return render(request, 'user_center_site.html')
+
+
+
