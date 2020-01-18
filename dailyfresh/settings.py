@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'dailyfresh',
         'USER': 'root',
         'PASSWORD': 'ycf123',
-        'HOST': '192.168.1.5',
+        'HOST': '192.168.3.9',
         'PORT': 3306,
     }
 }
@@ -162,7 +162,7 @@ EMAIL_FROM = '天天生鲜<godcanseeyou@163.com>'
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://192.168.1.5:6379/9",
+        "LOCATION": "redis://192.168.3.9:6379/9",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             # "PASSWORD": "mysecret"
@@ -172,3 +172,5 @@ CACHES = {
 # 配置session保存到缓存中
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
+
+LOGIN_URL='/user/login'
