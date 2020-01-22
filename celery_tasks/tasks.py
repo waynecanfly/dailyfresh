@@ -12,7 +12,7 @@ from django.core.mail import send_mail
 
 
 # 创建一个celery类的实例对象
-app = Celery('celery_tasks.tasks', broker='redis://192.168.1.5:6379/8')
+app = Celery('celery_tasks.tasks', broker='redis://192.168.10.135:6379/8')
 
 # 定义函数任务
 @app.task
