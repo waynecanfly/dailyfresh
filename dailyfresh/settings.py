@@ -174,3 +174,12 @@ SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
 
 LOGIN_URL='/user/login'
+
+# 设置django的文件存储类
+DEFAULT_FILE_STORAGE='utils.fdfs.storage.FDFSStorage'
+
+
+# 设置 fastdfs文件系统 使用的 client.conf文件路径
+FDFS_CLIENT_CONF = './utils/fdfs/client.conf'
+# 设置 fastdfs存储服务器上 nginx使用的IP和端口号
+FDFS_STORAGE_URL = 'http://192.168.10.135:80/'
