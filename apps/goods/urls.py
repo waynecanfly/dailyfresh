@@ -1,9 +1,7 @@
 from django.conf.urls import url
-from django.contrib import admin
-from django.urls import path, include
+from goods.views import IndexView
 
-from apps.goods import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'), # 跳转到首页
+    url(r'^$', IndexView.as_view(), name='index'), # 跳转到首页
 ]
