@@ -92,10 +92,21 @@ class DetailView(View):
             conn = get_redis_connection('default')
             cart_key = 'cart_%d' % user.id
             cart_count = conn.hlen(cart_key)
+            # 用户登录后，访问商品详情时将商品添加到历史浏览记录中
+            conn = get_redis_connection('default')
+            history_key = 'history_%d'%user.id
+            # 移除列表中的goods_id
+            conn.lrem(history_key, 0, goods_id)
+            # 把goods_id插入到列表的左侧
+            conn.lpush(history_key, goods_id)
+            # 只保存用户最新浏览的5条信息
+            conn.ltrim(history_key, 0, 4)
+
+
 
         # 组织模板上下文
         context = {'sku': sku, 'types': types,
                    'sku_orders': sku_orders, 'new_skus': new_skus,
                    'cart_count': cart_count}
-        
+
         return render(request, 'detail.html', context)
