@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'dailyfresh',
         'USER': 'root',
         'PASSWORD': 'ycf123',
-        'HOST': '192.168.10.135',
+        'HOST': '***.***.**.***',
         'PORT': 3306,
     }
 }
@@ -162,7 +162,7 @@ EMAIL_FROM = '天天生鲜<godcanseeyou@163.com>'
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://192.168.10.135:6379/9",
+        "LOCATION": "redis://***.***.**.***/9",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             # "PASSWORD": "mysecret"
@@ -182,4 +182,4 @@ DEFAULT_FILE_STORAGE='utils.fdfs.storage.FDFSStorage'
 # 设置 fastdfs文件系统 使用的 client.conf文件路径
 FDFS_CLIENT_CONF = './utils/fdfs/client.conf'
 # 设置 fastdfs存储服务器上 nginx使用的IP和端口号
-FDFS_STORAGE_URL = 'http://192.168.10.135:8888/'
+FDFS_STORAGE_URL = 'http://***.***.**.***:8888/'
