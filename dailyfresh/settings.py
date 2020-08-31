@@ -154,7 +154,7 @@ EMAIL_USE_TLS = False        # SSL加密方式
 #发送邮件的邮箱
 EMAIL_HOST_USER = 'godcanseeyou@163.com'
 #在邮箱中设置的客户端授权密码
-EMAIL_HOST_PASSWORD = 'godcanseeyou163'
+EMAIL_HOST_PASSWORD = '***********'
 #收件人看到的发件人，必须和上面的邮箱一样，否则发不出去
 EMAIL_FROM = '天天生鲜<godcanseeyou@163.com>'
 
